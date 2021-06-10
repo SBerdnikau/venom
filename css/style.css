@@ -125,7 +125,7 @@ body{
     max-width: 320px;
 }
 .content .trailer{
-    background: url("/img/trailer-cover.png") no-repeat center / cover;
+    background: url("../img/trailer-cover.png") no-repeat center / cover;
     width: 356px;
     height: 205px;
     border-radius: 5px;
