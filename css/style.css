@@ -4,7 +4,8 @@ body{
     font-family: 'Roboto', sans-serif
 }  
 .container{
-    max-width: 1140px;
+    /* max-width: 1140px; */
+    width: 90%;
     margin: auto;
 }
 .header{
@@ -30,15 +31,18 @@ body{
     text-decoration: none;
     color: rgba(255, 255, 255, 0.5);;
 }
+.film-logo{
+    width: 70%;
+}
 .film-date{
     display: block;
     font-size: 24px;
     line-height: 28px;
     color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 38px;
+    margin-bottom: 2%;
 }
 .film-description{
-    margin-top: 40px;
+    margin-top: 3%;
     max-width: 423px;
     font-size: 16px;
     line-height: 140%;
@@ -68,21 +72,20 @@ body{
     color: #fff;
 }
 .button-group{
-    margin-top: 70px;
+    margin-top: 5%;
 }
 .venom{
-    width: 626px;
+    max-width: 628px;
+    width: 40%;
     position: absolute;
     top: 0;
     right: 0;
 }
 .blood{
-    background:   url("../img/blood.png") no-repeat top right, #14131A url("../img/backgraund.png") no-repeat center center;
-    object-fit: fill;
+    background:   url("../img/blood.png") no-repeat top right / 60%, #14131A url("../img/backgraund.png") no-repeat center top / cover;
 }
 .primary-bg{
-    background:   #14131A url("../img/backgraund.png") no-repeat center center;
-    object-fit: fill;
+    background:   #14131A url("../img/backgraund.png") no-repeat center top / cover;
 }
 .content{
     display: flex;
@@ -96,6 +99,7 @@ body{
     color: rgba(255, 255, 255, 0.8);
     font-weight: bold;
     margin-bottom: 20px;
+    margin-top: 0;
 }
 .content-text{
     font-size: 16px;
@@ -125,7 +129,7 @@ body{
     max-width: 320px;
 }
 .content .trailer{
-    background: url("img/trailer-cover.png") no-repeat center / cover;
+    background: url("../img/trailer-cover.png") no-repeat center / cover;
     width: 356px;
     height: 205px;
     border-radius: 5px;
@@ -162,4 +166,131 @@ body{
 .poster-wrapper .list{
     margin: 0;
     margin-bottom: 20px;
+}
+
+.menu-button{
+    display: none;
+}
+.menu-close{
+    display: none;
+}
+
+@media(max-width: 1024px){
+    .content{
+        flex-direction: column;
+        padding-top: 5%;
+    }
+    .col{
+        margin-bottom: 5%;
+    }
+    .header{
+        margin-bottom: 4%;
+    }
+    .film{
+        margin-top: 10%;
+    }
+    img{
+        max-width: 100%;
+    }
+}
+@media(max-width: 768px){
+    .blood{
+        background: #14131A;
+    }
+    .venom{
+        top: 20%;
+    }
+   
+}
+
+@media(max-width: 576px){
+    .venom{
+        top: 20%;
+        width: 30%;
+    }
+    .nav{
+        margin-left: auto;
+    }
+    .nav-menu{
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color:#fff;
+        z-index: 9;
+        display: flex;
+        align-items:center;
+        justify-content: center;
+        flex-direction: column;
+        transform: translateX(100%);
+        transition: transform 0.3s;
+    }
+    .nav-menu-item{
+        margin-bottom: 2%;
+        margin-top: 2%;
+        margin-right: 0;
+    }
+    .nav-menu-link{
+        color: #14131A;
+    }
+    .menu-button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        border: none;
+        background: #14131A;
+        cursor: pointer;
+        color:#fff;
+    }
+    .menu-button-text{
+        margin-right: 10px;
+    }
+    .button-group{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .film-text{
+        text-align: center;
+    }
+    .poster-wrapper{
+        flex-direction: column;
+    }
+    .poster{
+        margin-bottom: 20%;
+        margin-right: 0;
+        width: 100%;
+    }
+    .content .trailer{
+        max-width: 350px;
+        width: 100%;
+    }
+    .column-2{
+        column-count: 1;
+    }
+    .menu-close{
+        opacity: 0;
+        position: fixed;
+        top: 65px;
+        right: 25px;
+        display: flex;
+        align-items: center;
+        z-index: 10;
+        border: none;
+        background: #fff;
+        cursor: pointer;
+        transform: translateX(300%);
+        transition: transform 0.3s;
+        transition-delay: 0.3s;
+    }
+    .is-active{
+        transform: translateX(0%);
+        opacity: 1;
+    }
+    .menu-close-text{
+        margin-right: 10px;
+    }
 }
